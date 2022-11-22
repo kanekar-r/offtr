@@ -1,11 +1,4 @@
-<html>
-   <body>
-      <form action = "http://localhost:5000/result" method = "POST">
-         <p>Name <input type = "text" name = "Name" /></p>
-         <p>Physics <input type = "text" name = "Physics" /></p>
-         <p>Chemistry <input type = "text" name = "chemistry" /></p>
-         <p>Maths <input type ="text" name = "Mathematics" /></p>
-         <p><input type = "submit" value = "submit" /></p>
-      </form>
-   </body>
-</html>
+<form action="{{ url_for("gfg")}}" method="post">
+   <label for="ProjectID">Project ID:</label>
+   <input type="text" id="ProjectID" name="ProjectID" placeholder="Project ID">
+   <button type="submit">Submit</button>

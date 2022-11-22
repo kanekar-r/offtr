@@ -1,19 +1,30 @@
-from flask import Flask, render_template, request
-app = Flask(__name__)
+# importing Flask and other modules
+from flask import Flask, request, render_template
+ 
+prj = {}
 
-@app.route('/')
-def student():
-   return render_template('student.html')
+# Flask constructor
+app = Flask(__name__)  
+ 
+# A decorator used to tell the application
+# which URL is associated function
+@app.route('/', methods =["GET", "POST"])
+def gfg():
+    if request.method == "POST":
+       # getting input with name = fname in HTML form
+       projectid = request.form.get("ProjectID")
+              
+       # getting input with name = lname in HTML form
+       # last_name = request.form.get("lname")
+       
+       print(projectid)
 
-   
+       prj['ID'] = projectid
+       
+       print(prj)
 
-@app.route('/result',methods = ['POST', 'GET'])
-def result():
-   if request.method == 'POST':
-      result = request.form
-      print(type(result))
-      print(result)
-      return render_template("result.html",result = result)
+       return "Your Project is "+ projectid
+    return render_template("student.html")
 
-if __name__ == '__main__':
-   app.run(debug = True)
+if __name__=='__main__':
+   app.run()
