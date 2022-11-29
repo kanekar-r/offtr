@@ -1,7 +1,9 @@
 # importing Flask and other modules
 from flask import Flask, request, render_template
- 
+from datetime import date
 prj = {}
+vend = {}
+comp = {}
 
 # Flask constructor
 app = Flask(__name__)  
@@ -26,5 +28,25 @@ def gfg():
        return "Your Project is "+ projectid
     return render_template("student.html")
 
+@app.route('/vendor', methods = ["GET", "POST"])
+def vendor():
+
+   # return render_template("vendor.html")
+   print(request.form.get)
+
+   vdate = request.form.get("vdate")
+   bdate = request.form.get("bdate")
+   cdate = date.today()
+   vend = {
+      "vdate" : vdate,
+      "bdate" : bdate,
+      "cdate" : cdate
+   }
+
+   print(vend)
+
+   return render_template("vendor.html")
+
+
 if __name__=='__main__':
-   app.run()
+   app.run(debug = "TRUE")
