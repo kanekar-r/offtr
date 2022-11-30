@@ -6,20 +6,19 @@
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-    <h1>Add Project ID</h1>
+    <h1>Add Components</h1>
     <form method="POST">
       <div class="form__fieldset">
-        <label for="Project ID" class="form__label">Project ID:</label>
-        <input type="text" name="projectid" id="projectid" class="form__input" />
+        <label for="Component" class="form__label">Component:</label>
+        <input type="text" name="compn" id="compn" class="form__input" />
       </div>
 
-      <h1>Add Project Engineer</h1>
+      <h1>Planned Released Date</h1>
       <form method="POST">
         <div class="form__fieldset">
-          <label for="Project Engineer" class="form__label">Project Engineer:</label>
-          <input type="text" name="projecten" id="projecten" class="form__input" />
+          <label for="Component" class="form__label">Planned Release Date:</label>
+          <input type="date" name="pdate" id="pdate" class="form__input" />
         </div>
-
       <!-- <div class="form__fieldset">
          <label for="date" class="form__label">BCIN Date:</label>
          <input type="date" name="bdate" id="bdate" class="form__input" />
@@ -32,7 +31,7 @@
         <input
           class="form__submit form__input"
           type="submit"
-          value="Add Project"
+          value="Add Component"
         />
       </div>
     </form>

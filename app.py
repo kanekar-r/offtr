@@ -14,7 +14,8 @@ app = Flask(__name__)
 def gfg():
     if request.method == "POST":
        # getting input with name = fname in HTML form
-       projectid = request.form.get("ProjectID")
+       projectid = request.form.get("projectid")
+       projecten = request.form.get("projecten")
               
        # getting input with name = lname in HTML form
        # last_name = request.form.get("lname")
@@ -22,11 +23,12 @@ def gfg():
        print(projectid)
 
        prj['ID'] = projectid
-       
+       prj['comp'] = comp
+       prj['projecten'] = projecten       
        print(prj)
 
-       return "Your Project is "+ projectid
     return render_template("student.html")
+
 
 @app.route('/vendor', methods = ["GET", "POST"])
 def vendor():
@@ -34,18 +36,42 @@ def vendor():
    # return render_template("vendor.html")
    print(request.form.get)
 
+   vname = request.form.get("vname")
    vdate = request.form.get("vdate")
    bdate = request.form.get("bdate")
    cdate = date.today()
    vend = {
-      "vdate" : vdate,
-      "bdate" : bdate,
-      "cdate" : cdate
-   }
+         "vname" : vname,
+         "vdate" : vdate,
+         "bdate" : bdate,
+         "cdate" : cdate
+      }
 
    print(vend)
 
    return render_template("vendor.html")
+
+
+
+@app.route('/comp', methods = ["GET", "POST"])
+def comp():
+
+   print(request.form.get)
+
+   compn = request.form.get("compn")
+   pdate = request.form.get("pdate")
+   comp = {
+      "compn" : compn,
+      "vend1" : vend,
+      "pdate" : pdate
+   }
+
+   print(comp)
+
+   # return render_template("vendor.html")
+
+
+   return render_template("comp.html")
 
 
 if __name__=='__main__':
