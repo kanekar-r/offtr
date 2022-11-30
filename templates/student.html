@@ -1,4 +1,41 @@
-<form action="{{ url_for("gfg")}}" method="post">
-   <label for="ProjectID">Project ID:</label>
-   <input type="text" id="ProjectID" name="ProjectID" placeholder="Project ID">
-   <button type="submit">Submit</button>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Components addition</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Add Project ID</h1>
+    <form method="POST">
+      <div class="form__fieldset">
+        <label for="Project ID" class="form__label">Project ID:</label>
+        <input type="text" name="projectid" id="projectid" class="form__input" />
+      </div>
+
+      <h1>Add Project ID</h1>
+      <h1>Add Project ID</h1>
+      <form method="POST">
+        <div class="form__fieldset">
+          <label for="Project ID" class="form__label">Project ID:</label>
+          <input type="text" name="projectid" id="projectid" class="form__input" />
+        </div>
+
+      <!-- <div class="form__fieldset">
+         <label for="date" class="form__label">BCIN Date:</label>
+         <input type="date" name="bdate" id="bdate" class="form__input" />
+       </div> -->
+
+
+
+
+      <div class="form__fieldset">
+        <input
+          class="form__submit form__input"
+          type="submit"
+          value="Add Component"
+        />
+      </div>
+    </form>
+  </body>
+</html>
