@@ -22,11 +22,12 @@ def gfg():
        print(projectid)
 
        prj['ID'] = projectid
+       prj['comp'] = comp
        
        print(prj)
 
-       return "Your Project is "+ projectid
     return render_template("student.html")
+
 
 @app.route('/vendor', methods = ["GET", "POST"])
 def vendor():
@@ -38,14 +39,34 @@ def vendor():
    bdate = request.form.get("bdate")
    cdate = date.today()
    vend = {
-      "vdate" : vdate,
-      "bdate" : bdate,
-      "cdate" : cdate
-   }
+         "vdate" : vdate,
+         "bdate" : bdate,
+         "cdate" : cdate
+      }
 
    print(vend)
 
    return render_template("vendor.html")
+
+
+
+@app.route('/comp', methods = ["GET", "POST"])
+def comp():
+
+   print(request.form.get)
+
+   compn = request.form.get("compn")
+   comp = {
+      "compn" : compn,
+      "vend1" : vend
+   }
+
+   print(comp)
+
+   # return render_template("vendor.html")
+
+
+   return render_template("comp.html")
 
 
 if __name__=='__main__':
