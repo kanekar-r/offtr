@@ -1,2 +1,1 @@
 # offtr
-https://zoom.us/j/98107720759?pwd=ZFZZU3VzRU5YZ01MZ0NZSXVZd0tDdz09
